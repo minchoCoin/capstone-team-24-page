@@ -50,7 +50,7 @@ Future enhancements include expanding the dataset, incorporating real-time trend
 
 ---
 
-# data
+# Data
 - [fashion preferences and recommendation data by year](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71446)
 
 - [K-Fashion](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=51)
@@ -98,7 +98,7 @@ Future enhancements include expanding the dataset, incorporating real-time trend
 
 *Figure 7. Fashion recommendation result*
 
-# references
+# References
 1. Yun-Seok Jung, “A Study on the Quantitative Diagnosis Model of Personal 
 Color,” Journal of Convergence for Information Technology, Vol. 11, No. 11, pp. 
 277-287, 2021. (in Korean)
