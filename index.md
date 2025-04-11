@@ -27,21 +27,23 @@ The research demonstrates the feasibility and effectiveness of personalized fash
 
 
 # Overview
-This technical report from Pusan National University presents a comprehensive fashion recommendation system that analyzes individual physical characteristics—personal color, face shape, and body type—to provide customized fashion suggestions. The system addresses the growing demand for personalized services in the fashion industry.
+This technical report presents a comprehensive fashion recommendation system that analyzes individual physical characteristics—personal color, face shape, and body type—to provide customized fashion suggestions. The system addresses the growing demand for personalized services in the fashion industry.
 # Key Components
 ## Personal Color Analysis
 The system extract RGB values of skin area of a face image, and convert it to HSV values and Lab color space. The system uses K-means clustering to classify users' skin tones into four seasonal types (Spring, Summer, Autumn, Winter) by analyzing HSV values and Lab color space. This classification helps recommend colors that enhance the user's natural complexion.
 ## Face Shape Recognition
-Using an EfficientNetB4-based deep learning model trained on 5,000 images, the system identifies five face shapes (heart, long, oval, round, square) with 75.8% accuracy. We augmented data with rotation and flip. These classifications inform recommendations for clothing styles and necklines that complement facial features.
+We use an EfficientNetB4-based deep learning model. The model was built based on the EfficientNetB4 network pretrained on the ImageNet dataset. A GlobalAveragePooling2D layer was applied to the output of EfficientNetB4, and the resulting output was passed through a Fully-connected layer to classify into five face shapes. The system identifies five face shapes (heart, long, oval, round, square) with 75.8% accuracy.  These classifications inform recommendations for clothing styles and necklines that complement facial features.
 ## Body Shape Measurement
 The system employs MediaPipe's Pose Landmark technology and Rembg's removing background technology to extract key body measurements and proportions. It calculates ratios between shoulders, waist, hips, and chest to classify users into different body types, enabling recommendations that enhance body proportions.
 ## Recommendation Engines
 Two approaches were implemented:
 
-- A Random Forest model that predicts ratings based on user characteristics and clothing attributes(appropriate wearing situation, fit, color, mood, style, season)
-- A content-based collaborative filtering system using cosine similarity to find similar clothing items based on keyword of the clothes
+### A Random Forest model
+This model predicts ratings based on user characteristics and clothing attributes(appropriate wearing situation, fit, color, mood, style, season). We trained the model with [fashion preferences and recommendation data by year](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71446). This model has test RMSE scores of 0.759 for men and 0.773 for women. It also inorporates user feedback to continuously improve recommendation quality. The user feedback system was implemented by adding the  (user characteristic - clothes attributes - rating) data to the existing training data and learning a new Random Forest model when the user gave a rating.
 
-The Random Forest model also incorporates user feedback to continuously improve recommendation quality, with demonstrated test RMSE scores of 0.759 for men and 0.773 for women.
+### A content-based collaborative filtering system 
+This model uses cosine similarity to find similar clothing items based on keyword of the clothes. We use TF-IDF Vectorizing to embedding the keyword. We collected (clothes - keyword) data from [K-Fashion](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=51) data. We assign fashion keywords based on specific physical characteristics and recommend clothing items that share similar keywords. Alternatively, we recommend items that match the keywords entered by the user.
+
 
 # Applications
 This technology enables highly personalized fashion recommendations that consider individual physical attributes rather than just following general trends. The web interface allows users to upload photos or manually input their characteristics to receive tailored fashion suggestions.
