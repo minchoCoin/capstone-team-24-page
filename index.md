@@ -103,7 +103,6 @@ Future enhancements include expanding the dataset, incorporating real-time trend
 # Acknowledgements
 This graduation project was conducted as part of the 2024 Early-Year Capstone Design Program of the School of Information and Computer Engineering. It was carried out as an industry-academic collaboration project, with partial guidance and advice provided by an employee of NAVER Webtoon. This work has been registered with the Korea Copyright Commission (Registration No. C-2024-042740), with  Research and Business Development Foundation of Pusan National University listed as the copyright holder. The author participated in the work as the creators.
 
-
 # References
 1. Yun-Seok Jung, “A Study on the Quantitative Diagnosis Model of Personal 
 Color,” Journal of Convergence for Information Technology, Vol. 11, No. 11, pp. 
@@ -119,3 +118,14 @@ Available: [https://www.mezzomedia.co.kr/data/insight_m_file/insight_m_file_1605
 Colors According to Skin Color,” M.S. thesis, Graduate School of Cultural and 
 Information Policy, Hongik Univ., Seoul, South Korea, 2019. (in Korean) doi: [https://www.doi.org/10.23174/hongik.000000024122.11064.0000288](https://www.doi.org/10.23174/hongik.000000024122.11064.0000288)
 6. Trotter, Cameron Patrick; Peleja, Filipa; Santos, Alberto de; Dotti, Dario (2023). Human Body Shape Classification Dataset. Newcastle University. Dataset. doi: [https://doi.org/10.25405/data.ncl.19307300.v1](https://doi.org/10.25405/data.ncl.19307300.v1)
+
+# BibTex
+```
+@software{Fashion_recommendation_personal,
+  author = {Seonghoon Lee and Taehun Kim},
+  month = {11},
+  title = {{Fashion recommendation system based on personal characteristics}},
+  url = {https://github.com/pnucse-capstone-2024/Capstone-2024-team-24},
+  year = {2024}
+}
+```
