@@ -58,7 +58,7 @@ Future enhancements include expanding the dataset, incorporating real-time trend
 - [K-Fashion](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=51)
 
 - [Face Shape dataset](https://www.kaggle.com/datasets/niten19/face-shape-dataset)
-- [Human Body classification dataset](https://data.ncl.ac.uk/articles/dataset/Human_Body_Shape_Classification_Dataset/19307300?file=34292915)
+- [Human Body classification dataset](https://doi.org/10.25405/data.ncl.19307300.v1)
 
 - [Korean bodyshape data](https://sizekorea.kr/human-info/body-shape-class/age-gender-body)
 
@@ -103,16 +103,15 @@ Future enhancements include expanding the dataset, incorporating real-time trend
 # References
 1. Yun-Seok Jung, “A Study on the Quantitative Diagnosis Model of Personal 
 Color,” Journal of Convergence for Information Technology, Vol. 11, No. 11, pp. 
-277-287, 2021. (in Korean)
+277-287, 2021. (in Korean) doi: [https://doi.org/10.22156/CS4SMB.2021.11.11.277](https://doi.org/10.22156/CS4SMB.2021.11.11.277)
 2. Jong-Suk An, “A Study on Effective Image Making Depending on Hair Style 
-and Neckline,” J Korean Soc Cosmetol, Vol. 15, No. 1, pp.342-351, 2009. (in 
-Korean)
-3. Soo-ae Kwon, Fashion and Life, Gyohakyungusa, 2016.
+and Neckline,” Jounal of The Korean Society of cosmetology, Vol. 15, No. 1, pp.342-351, 2009. (in 
+Korean) Available at [https://www.riss.kr/link?id=A76494548](https://www.riss.kr/link?id=A76494548)
+3. Soo-ae Kwon, Fashion and Life, Gyohakyungusa, 2016. ISBN: 9788935405558
 4. “2023 Consumption Trend Series - 03 Personalized Services,” MezzoMedia 
 Available: [https://www.mezzomedia.co.kr/data/insight_m_file/insight_m_file_1605.pdf](https://www.mezzomedia.co.kr/data/insight_m_file/insight_m_file_1605.pdf)
  (downloaded 2024, May. 19)
 5. So-young Lee, “Personal Color Tone Type and Categorization of Harmonious 
 Colors According to Skin Color,” M.S. thesis, Graduate School of Cultural and 
-Information Policy, Hongik Univ., Seoul, South Korea, 2019. (in Korean)
-6. Cameron Patrick Trotter et al. Human Body Shape Classification Dataset. 
-[https://data.ncl.ac.uk/articles/dataset/Human_Body_Shape_Classification_Dataset/19307300?file=34292915](https://data.ncl.ac.uk/articles/dataset/Human_Body_Shape_Classification_Dataset/19307300?file=34292915)
+Information Policy, Hongik Univ., Seoul, South Korea, 2019. (in Korean) doi: [https://www.doi.org/10.23174/hongik.000000024122.11064.0000288](https://www.doi.org/10.23174/hongik.000000024122.11064.0000288)
+6. Trotter, Cameron Patrick; Peleja, Filipa; Santos, Alberto de; Dotti, Dario (2023). Human Body Shape Classification Dataset. Newcastle University. Dataset. doi: [https://doi.org/10.25405/data.ncl.19307300.v1](https://doi.org/10.25405/data.ncl.19307300.v1)
