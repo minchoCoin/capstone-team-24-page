@@ -59,7 +59,9 @@ Future enhancements include expanding the dataset, incorporating real-time trend
 - [Human Body classification dataset](https://data.ncl.ac.uk/articles/dataset/Human_Body_Shape_Classification_Dataset/19307300?file=34292915)
 
 - [Korean bodyshape data](https://sizekorea.kr/human-info/body-shape-class/age-gender-body)
+
 # Tables
+
 |               | man dataset | woman dataset |
 |---------------|-------------|---------------|
 | Train dataset | 0.304       | 0.312         |
