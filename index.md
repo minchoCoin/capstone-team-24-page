@@ -54,14 +54,14 @@ Future enhancements include expanding the dataset, incorporating real-time trend
 
 # Data
 - [fashion preferences and recommendation data by year](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71446)
-
+    - This data is the outcome of a project by the National Information Society Agency (NIA) of Korea.
 - [K-Fashion](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=51)
-
+    - This data is the outcome of a project by the National Information Society Agency (NIA) of Korea.
 - [Face Shape dataset](https://www.kaggle.com/datasets/niten19/face-shape-dataset)
 - [Human Body classification dataset](https://doi.org/10.25405/data.ncl.19307300.v1)
 
 - [Korean bodyshape data](https://sizekorea.kr/human-info/body-shape-class/age-gender-body)
-
+    - This data is the outcome of a project by Korean Agency for Technology and Standards (KATS), Ministry of Trade, Industry and Energy (MOTIE) of Korea.
 # Tables
 
 |               | man dataset | woman dataset |
@@ -99,6 +99,10 @@ Future enhancements include expanding the dataset, incorporating real-time trend
 [![figure7.png](https://i.postimg.cc/FFq2XM9X/figure7.png)](https://postimg.cc/kDQjxh6T)
 
 *Figure 7. Fashion recommendation result*
+
+# Acknowledgements
+This graduation project was conducted as part of the 2024 Early-Year Capstone Design Program of the School of Information and Computer Engineering. It was carried out as an industry-academic collaboration project, with partial guidance and advice provided by an employee of NAVER Webtoon. This work has been registered with the Korea Copyright Commission (Registration No. C-2024-042740), with  Research and Business Development Foundation of Pusan National University listed as the copyright holder. The author participated in the work as the creators.
+
 
 # References
 1. Yun-Seok Jung, “A Study on the Quantitative Diagnosis Model of Personal 
