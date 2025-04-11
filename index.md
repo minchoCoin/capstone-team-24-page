@@ -62,6 +62,7 @@ Future enhancements include expanding the dataset, incorporating real-time trend
 
 - [Korean bodyshape data](https://sizekorea.kr/human-info/body-shape-class/age-gender-body)
     - This data is the outcome of a project by Korean Agency for Technology and Standards (KATS), Ministry of Trade, Industry and Energy (MOTIE) of Korea.
+
 # Tables
 
 |               | man dataset | woman dataset |
@@ -124,7 +125,7 @@ Information Policy, Hongik Univ., Seoul, South Korea, 2019. (in Korean) doi: [ht
 @software{Fashion_recommendation_personal,
   author = {Seonghoon Lee and Taehun Kim},
   month = {11},
-  title = {{Fashion recommendation system based on personal characteristics}},
+  title = {Fashion recommendation system based on personal characteristics},
   url = {https://github.com/pnucse-capstone-2024/Capstone-2024-team-24},
   year = {2024}
 }
