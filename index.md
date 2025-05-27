@@ -202,7 +202,7 @@ Figure 12 and Figure 13 shows the precision at Top k and recall at Top k. Figure
 
 Figure 16 and Figure 17 shows the precision at Top k and recall at Top k. Figure 18, 19 and 20 shows the precision and recall curve
 
-![fig16](/static/image/figure16.png)
+![fig16](/static/image/figure16.PNG)
 
 *Figure 16. precision at Top k and recall at Top k of the recommendation system on the woman training dataset.*
 
