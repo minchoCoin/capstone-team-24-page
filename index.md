@@ -227,6 +227,7 @@ Figure 16 and Figure 17 shows the precision at Top k and recall at Top k. Figure
 In this section, We measure precision at k and recall at k by comparing the actual preference of clothes by personal color, face type, and body type, and the clothes predicted by the recommendation system to be preferred for those characteristic
 
 $$ Precision @ k = \frac{\text{Number of items relevant to the personal characteristic in top K}}{K}$$
+
 $$ Recall @ k = \frac{\text{Number of items relevant to the personal characteristic in top K}}{\text{Total number of items relevant to the personal characteristic}}$$
 
 ### Man
