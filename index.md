@@ -120,6 +120,92 @@ Colors According to Skin Color,” M.S. thesis, Graduate School of Cultural and
 Information Policy, Hongik Univ., Seoul, South Korea, 2019. (in Korean) doi: [https://www.doi.org/10.23174/hongik.000000024122.11064.0000288](https://www.doi.org/10.23174/hongik.000000024122.11064.0000288)
 6. Trotter, Cameron Patrick; Peleja, Filipa; Santos, Alberto de; Dotti, Dario (2023). Human Body Shape Classification Dataset. Newcastle University. Dataset. doi: [https://doi.org/10.25405/data.ncl.19307300.v1](https://doi.org/10.25405/data.ncl.19307300.v1)
 
+# Appendix
+After the capstone project is finished, we evaluate the recommendation system more precisely
+
+We considered a score of 3 or higher to be preferred (or recommended) and a score of less than 3 to be disliked (or not recommended) based on the score the user gave to the clothes and the score predicted by the recommendation system.
+
+## precision and recall
+
+We measured the precision and recall using classification_report function in sklearn.metrics.
+
+|                    | Real positive | Real negative |
+|--------------------|---------------|---------------|
+| Predicted positive |       TP      |       FP      |
+| Predicted negative |       FN      |       TN      |
+
+(Table 10. precision and recall)
+
+$$ precision = \frac{TP}{TP+FP}$$
+$$ recall = \frac{TP}{TP+FN}$$
+$$ accuracy = \frac{TP+TN}{TP+FP+FN+TN}$$
+### man
+
+Figure 8 and Figure 9 shows the precision and recall of the recommendation system on the man dataset. 0 means not recommended or disliked, and 1 means recommended or preferred. These result show that the recommendation system has a high precision, which means that many of the recommended ones are preferred by the user
+
+![fig8](/static/image/figure8.PNG)
+
+(Figure 8. precision and recall of the recommendation system on the man training dataset. 0 means not recommended or disliked, and 1 means recommended or preferred)
+
+![fig9](/static/image/figure9.PNG)
+
+(Figure 9. precision and recall of the recommendation system on the man test dataset. 0 means not recommended or disliked, and 1 means recommended or preferred)
+
+### woman
+
+Figure 10 and Figure 11 shows the precision and recall of the recommendation system on the woman dataset. 0 means not recommended or disliked, and 1 means recommended or preferred. These result show that the recommendation system has a high precision, which means that many of the recommended ones are preferred by the user
+
+![fig10](/static/image/figure10.PNG)
+
+(Figure 10. precision and recall of the recommendation system on the woman training dataset. 0 means not recommended or disliked, and 1 means recommended or preferred)
+
+![fig11](/static/image/figure11.PNG)
+
+(Figure 11. precision and recall of the recommendation system on the woman test dataset. 0 means not recommended or disliked, and 1 means recommended or preferred)
+
+## precision at k and recall at k
+
+We measured the precision at k and recall at k using users with two or more ratings. precision at Top k measures the proportion of relevant items in the top K results returned by a system. recall at Top k measures the proportion of all relevant items that are included in the top K results.
+
+$$ Precision @k = \frac{\text{Number of items relevant to the user in top K}}{K}$$
+$$ Recall @ k = \frac{\text{Number of items relevant to the user in top K}}{\text{Total number of items relevant to the user}}$$
+### man
+
+Figure 12 and Figure 13 shows the precision at Top k and recall at Top k. Figure 16  shows the precision and recall curve
+
+![fig12](/static/image/figure12.png)
+
+(Figure 12. precision at Top k and recall at Top k of the recommendation system on the man training dataset.)
+
+![fig13](/static/image/figure13.png)
+
+(Figure 13. precision at Top k and recall at Top k of the recommendation system on the man test dataset.)
+
+![fig16](/static/image/figure16.PNG)
+![fig16](/static/image/figure16-1.PNG)
+
+(Figure 16. precision and recall curve of man training set and test set)
+
+### woman
+
+## precision at k and recall at k counting the items relevant to the personal characteristic
+
+In this section, We measure precision at k and recall at k by comparing the actual preference of clothes by personal color, face type, and body type, and the clothes predicted by the recommendation system to be preferred for those characteristic
+
+$$ Precision @ k = \frac{\text{Number of items relevant to the personal characteristic in top K}}{K}$$
+$$ Recall @ k = \frac{\text{Number of items relevant to the personal characteristic in top K}}{\text{Total number of items relevant to the personal characteristic}}$$
+
+### man
+
+![fig14](/static/image/figure14.png)
+
+(Figure 14. precision at Top k and recall at Top k counting the items relevant to the personal characteristic on the man training dataset.)
+
+![fig15](/static/image/figure15.png)
+
+(Figure 15. precision at Top k and recall at Top k counting the items relevant to the personal characteristic on the man test dataset.)
+### woman
+
 # BibTex
 ```
 @software{Fashion_recommendation_personal,
