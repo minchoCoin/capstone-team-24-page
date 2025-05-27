@@ -45,7 +45,10 @@ This model predicts ratings based on user characteristics and clothing attribute
 This model uses cosine similarity to find similar clothing items based on keyword of the clothes. We use TF-IDF Vectorizing to embedding the keyword. We collected (clothes - keyword) data from [K-Fashion](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=51) data. We assign fashion keywords based on the physical characteristics and the model recommend clothing items that share similar keywords. Alternatively, the model recommend items that match the keywords entered by the user.
 
 
-# Applications
+# Conclusion and Applications
+The possibility of personalized services was confirmed by establishing a system for recommending customized fashion based on the physical characteristics of users such as personal color, face type, and body type. In particular, the Random Forest-based recommendation system recorded high prediction accuracy, and the recommended quality improvement function reflecting user feedback played an important role in continuously improving the performance of the system.
+These results showed the importance of customized services and the possibility of how the personalized recommendation system can be applied in the fashion industry.
+
 This technology enables highly personalized fashion recommendations that consider individual physical attributes rather than just following general trends. The web interface allows users to upload photos or manually input their characteristics to receive tailored fashion suggestions.
 # Future Directions
 Future enhancements include expanding the dataset, incorporating real-time trend analysis, and potential integration with e-commerce platforms to create a seamless shopping experience.
@@ -125,7 +128,7 @@ After the capstone project is finished, we evaluate the recommendation system mo
 
 We considered a score of 3 or higher to be preferred (or recommended) and a score of less than 3 to be disliked (or not recommended) based on the score the user gave to the clothes and the score predicted by the recommendation system.
 
-## precision and recall
+## Precision and recall
 
 We measured the precision and recall using classification_report function in sklearn.metrics.
 
@@ -137,74 +140,165 @@ We measured the precision and recall using classification_report function in skl
 (Table 10. precision and recall)
 
 $$ precision = \frac{TP}{TP+FP}$$
+
 $$ recall = \frac{TP}{TP+FN}$$
+
 $$ accuracy = \frac{TP+TN}{TP+FP+FN+TN}$$
-### man
+
+
+### Man
 
 Figure 8 and Figure 9 shows the precision and recall of the recommendation system on the man dataset. 0 means not recommended or disliked, and 1 means recommended or preferred. These result show that the recommendation system has a high precision, which means that many of the recommended ones are preferred by the user
 
 ![fig8](/static/image/figure8.PNG)
 
-(Figure 8. precision and recall of the recommendation system on the man training dataset. 0 means not recommended or disliked, and 1 means recommended or preferred)
+*Figure 8. precision and recall of the recommendation system on the man training dataset. 0 means not recommended or disliked, and 1 means recommended or preferred*
 
 ![fig9](/static/image/figure9.PNG)
 
-(Figure 9. precision and recall of the recommendation system on the man test dataset. 0 means not recommended or disliked, and 1 means recommended or preferred)
+*Figure 9. precision and recall of the recommendation system on the man test dataset. 0 means not recommended or disliked, and 1 means recommended or preferred*
 
-### woman
+### Woman
 
 Figure 10 and Figure 11 shows the precision and recall of the recommendation system on the woman dataset. 0 means not recommended or disliked, and 1 means recommended or preferred. These result show that the recommendation system has a high precision, which means that many of the recommended ones are preferred by the user
 
 ![fig10](/static/image/figure10.PNG)
 
-(Figure 10. precision and recall of the recommendation system on the woman training dataset. 0 means not recommended or disliked, and 1 means recommended or preferred)
+*Figure 10. precision and recall of the recommendation system on the woman training dataset. 0 means not recommended or disliked, and 1 means recommended or preferred*
 
 ![fig11](/static/image/figure11.PNG)
 
-(Figure 11. precision and recall of the recommendation system on the woman test dataset. 0 means not recommended or disliked, and 1 means recommended or preferred)
+*Figure 11. precision and recall of the recommendation system on the woman test dataset. 0 means not recommended or disliked, and 1 means recommended or preferred*
 
-## precision at k and recall at k
+## Precision at k and recall at k
 
 We measured the precision at k and recall at k using users with two or more ratings. precision at Top k measures the proportion of relevant items in the top K results returned by a system. recall at Top k measures the proportion of all relevant items that are included in the top K results.
 
 $$ Precision @k = \frac{\text{Number of items relevant to the user in top K}}{K}$$
-$$ Recall @ k = \frac{\text{Number of items relevant to the user in top K}}{\text{Total number of items relevant to the user}}$$
-### man
 
-Figure 12 and Figure 13 shows the precision at Top k and recall at Top k. Figure 16  shows the precision and recall curve
+$$ Recall @ k = \frac{\text{Number of items relevant to the user in top K}}{\text{Total number of items relevant to the user}}$$
+### Man
+
+Figure 12 and Figure 13 shows the precision at Top k and recall at Top k. Figure 14 and 15 shows the precision and recall curve
 
 ![fig12](/static/image/figure12.png)
 
-(Figure 12. precision at Top k and recall at Top k of the recommendation system on the man training dataset.)
+*Figure 12. precision at Top k and recall at Top k of the recommendation system on the man training dataset.*
 
 ![fig13](/static/image/figure13.png)
 
-(Figure 13. precision at Top k and recall at Top k of the recommendation system on the man test dataset.)
+*Figure 13. precision at Top k and recall at Top k of the recommendation system on the man test dataset.*
 
-![fig16](/static/image/figure16.PNG)
-![fig16](/static/image/figure16-1.PNG)
+![fig14](/static/image/figure14.png)
+![fig14](/static/image/figure14-1.png)
 
-(Figure 16. precision and recall curve of man training set and test set)
+*Figure 14. precision-recall curve of man training set and test set*
 
-### woman
+![fig15](/static/image/figure15.png)
 
-## precision at k and recall at k counting the items relevant to the personal characteristic
+*Figure 15. comparision of precision-recall curve of man training set and test set*
+
+### Woman
+
+Figure 16 and Figure 17 shows the precision at Top k and recall at Top k. Figure 18, 19 and 20 shows the precision and recall curve
+
+![fig16](/static/image/figure16.png)
+
+*Figure 16. precision at Top k and recall at Top k of the recommendation system on the woman training dataset.*
+
+![fig17](/static/image/figure17.png)
+
+*Figure 17. precision at Top k and recall at Top k of the recommendation system on the woman test dataset.*
+
+![fig18](/static/image/figure18.png)
+
+*Figure 18. precision-recall curve of man training set*
+
+![fig19](/static/image/figure19.png)
+
+*Figure 19. precision-recall curve of man test set*
+
+![fig20](/static/image/figure20.png)
+
+*Figure 20. comparision of precision-recall curve of woman training set and test set*
+
+## Precision at k and recall at k computed based on the items relevant to the personal characteristic element
 
 In this section, We measure precision at k and recall at k by comparing the actual preference of clothes by personal color, face type, and body type, and the clothes predicted by the recommendation system to be preferred for those characteristic
 
 $$ Precision @ k = \frac{\text{Number of items relevant to the personal characteristic in top K}}{K}$$
 $$ Recall @ k = \frac{\text{Number of items relevant to the personal characteristic in top K}}{\text{Total number of items relevant to the personal characteristic}}$$
 
-### man
+### Man
 
-![fig14](/static/image/figure14.png)
+Figure 21 and Figure 22 shows the precision at Top k and recall at Top k. Figure 23, 24 and 25 shows the precision and recall curve
 
-(Figure 14. precision at Top k and recall at Top k counting the items relevant to the personal characteristic on the man training dataset.)
+![fig100](/static/image/figure100.png)
 
-![fig15](/static/image/figure15.png)
+*Figure 21. precision at Top k and recall at Top k computed based on the items relevant to the personal characteristic element with the man training dataset.*
 
-(Figure 15. precision at Top k and recall at Top k counting the items relevant to the personal characteristic on the man test dataset.)
-### woman
+![fig101](/static/image/figure101.png)
+
+*Figure 22. precision at Top k and recall at Top k computed based on the items relevant to the personal characteristic element with the man test dataset.*
+
+![fig102](/static/image/figure102.png)
+
+*Figure 23. Precision-recall curve computed based on the items relevant to the personal characteristic element with the man train dataset.*
+
+![fig103](/static/image/figure103.png)
+
+*Figure 24. Precision-recall curve computed based on the items relevant to the personal characteristic element with the man test dataset.*
+
+![fig104](/static/image/figure104.png)
+
+*Figure 25. Comparison of Precision-recall curve computed based on the items relevant to the personal characteristic element with the man test dataset.*
+
+### Woman
+
+Figure 26 and Figure 27 shows the precision at Top k and recall at Top k. Figure 28, 29 and 30 shows the precision and recall curve
+
+![fig105](/static/image/figure105.png)
+
+*Figure 26. precision at Top k and recall at Top k computed based on the items relevant to the personal characteristic element with the woman training dataset.*
+
+![fig106](/static/image/figure106.png)
+
+*Figure 27. precision at Top k and recall at Top k computed based on the items relevant to the personal characteristic element with the woman test dataset.*
+
+![fig107](/static/image/figure107.png)
+
+*Figure 28. Precision-recall curve computed based on the items relevant to the personal characteristic element with the woman train dataset.*
+
+![fig108](/static/image/figure108.png)
+
+*Figure 29. Precision-recall curve computed based on the items relevant to the personal characteristic element with the woman test dataset.*
+
+![fig109](/static/image/figure109.png)
+
+*Figure 30. Comparison of Precision-recall curve computed based on the items relevant to the personal characteristic element with the woman test dataset.*
+
+## Limitation measuring precision with test dataset
+
+As shown in the Figure 32 and 34, in the test dataset, many of the users  rated only 1-2 clothes. This makes the precision and recall inaccurate. Therefore, the results of the test data above must be interpreted carefully.
+
+![fig110](/static/image/figure110.png)
+
+*Figure 31. Distribution of number of ratings per user in man training dataset*
+
+![fig111](/static/image/figure111.png)
+
+*Figure 32. Distribution of number of ratings per user in man test dataset*
+
+![fig112](/static/image/figure112.png)
+
+*Figure 33. Distribution of number of ratings per user in woman training dataset*
+
+![fig113](/static/image/figure113.png)
+
+*Figure 34. Distribution of number of ratings per user in woman test dataset*
+
+## Conclusion
+We calculate precision, recall, precision at k, recall at k. Also, we draw the precision-recall curve. above results show that the recommendation system can recommend the clothes based on the personal characteristic (personal color, faceshape, bodyshape)
 
 # BibTex
 ```
