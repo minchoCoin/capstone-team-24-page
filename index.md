@@ -310,3 +310,13 @@ We calculate precision, recall, precision at k, recall at k. Also, we draw the p
   year = {2024}
 }
 ```
+
+```
+@misc{Fashion_recommendation_personal_webpage,
+  title = {Fashion recommendation system based on personal characteristics webpage},
+  author = {Seonghoon Lee and Taehun Kim},
+  year = {2025},
+  url = {https://minchocoin.github.io/capstone-team-24-page/},
+  note = {Accessed on May 27, 2025}
+}
+```
