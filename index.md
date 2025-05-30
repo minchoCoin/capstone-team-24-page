@@ -324,6 +324,6 @@ We calculate precision, recall, precision at k, recall at k. Also, we draw the p
 ```
 # Authors
 - [Seonghoon Lee](https://github.com/NextrPlue)
-    - B.S in Computer Science and Engineering from Pusan National University
+    - B.S in Electrical and Computer Engineering from Pusan National University
 - [Taehun Kim](https://github.com/minchoCoin)
-    - B.S in Computer Science and Engineering from Pusan National University
+    - B.S in Electrical and Computer Engineering from Pusan National University
