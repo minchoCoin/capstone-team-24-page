@@ -4,7 +4,7 @@ permalink: /
 
 title: Fashion recommendation system based on personal characteristics
 authors:
-    이성훈, 김태훈
+    Seonghoon Lee, Taehun Kim
 affiliations:
     Electrical and Computer Engineering, Pusan National University
 paper: https://github.com/pnucse-capstone-2024/Capstone-2024-team-24/blob/main/docs/01.%EB%B3%B4%EA%B3%A0%EC%84%9C/03.%EC%B5%9C%EC%A2%85%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf
@@ -176,6 +176,7 @@ We measured the precision at k and recall at k using users with two or more rati
 
 $$ Precision @k = \frac{\text{Number of items relevant to the user in top K}}{K}$$
 
+
 $$ Recall @ k = \frac{\text{Number of items relevant to the user in top K}}{\text{Total number of items relevant to the user}}$$
 ### Man
 
@@ -321,3 +322,8 @@ We calculate precision, recall, precision at k, recall at k. Also, we draw the p
   note = {Accessed on May 27, 2025}
 }
 ```
+# Authors
+- [Seonghoon Lee](https://github.com/NextrPlue)
+    - B.S in Computer Science and Engineering from Pusan National University
+- [Taehun Kim](https://github.com/minchoCoin)
+    - B.S in Computer Science and Engineering from Pusan National University
