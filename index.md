@@ -174,10 +174,10 @@ Figure 10 and Figure 11 shows the precision and recall of the recommendation sys
 
 We measured the precision at k and recall at k using users with two or more ratings. precision at Top k measures the proportion of relevant items in the top K results returned by a system. recall at Top k measures the proportion of all relevant items that are included in the top K results.
 
-$$ Precision @k = \frac{\text{Number of items relevant to the user in top K}}{K}$$
+$$ Precision @k = \frac{\text{Number of items relevant to the user in top K}}{K} $$
 
 
-$$ Recall @ k = \frac{\text{Number of items relevant to the user in top K}}{\text{Total number of items relevant to the user}}$$
+$$ Recall @ k = \frac{\text{Number of items relevant to the user in top K}}{\text{Total number of items relevant to the user}} $$
 ### Man
 
 Figure 12 and Figure 13 shows the precision at Top k and recall at Top k. Figure 14 and 15 shows the precision and recall curve
@@ -324,6 +324,6 @@ We calculate precision, recall, precision at k, recall at k. Also, we draw the p
 ```
 # Authors
 - [Seonghoon Lee](https://github.com/NextrPlue)
-    - B.S in Electrical and Computer Engineering from Pusan National University
+    - B.S in electrical and computer engineering from Pusan National University
 - [Taehun Kim](https://github.com/minchoCoin)
-    - B.S in Electrical and Computer Engineering from Pusan National University
+    - B.S in electrical and computer engineering from Pusan National University
