@@ -394,8 +394,9 @@ models = {
     )
 }
 ```
+### Man results
 -----------------
-*Table 1. Comparision of Group 1 model. GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic*
+*Table 11. Comparision of Group 1 model with man dataset. GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic*
 
 | Model         | Train RMSE | Test RMSE | Test Acc | Test Precision | Test Recall | Precision@10 | Recall@10 | Personal Precision@10 | Personal Recall@10 |
 | ------------- | ---------- | --------- | -------- | -------------- | ----------- | ------------- | ---------- | -------------- | -------------- |
@@ -407,7 +408,7 @@ models = {
 | DecisionTree  | 0.7086     | 0.8034    | 0.63     | 0.81           | 0.30        | 0.1340        | 0.7724     | 0.6061         | 0.4485         |
 
 -----------------
-*Table 2. Comparision of Group 2 model. XGBoost, GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic*
+*Table 12. Comparision of Group 2 model with man dataset. XGBoost, GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic*
 
 | Model         | Train RMSE | Test RMSE | Test Acc | Test Precision | Test Recall | Precision@10 | Recall@10 | Personal Precision@10 | Personal Recall@10 |
 | ------------- | ---------- | --------- | -------- | -------------- | ----------- | ------------- | ---------- | -------------- | -------------- |
@@ -420,7 +421,7 @@ models = {
 
 -----------------
 
-*Table 3. Comparision of Group 3 model. XGBoost, GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic, while RandomForest and Decision Tree suffer from overfitting*
+*Table 13. Comparision of Group 3 model with man dataset. XGBoost, GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic, while RandomForest and Decision Tree suffer from overfitting*
 
 | Model            | Train RMSE | Test RMSE | Test Acc | Test Precision | Test Recall | Precision@10 | Recall@10 | Personal Precision@10 | Personal Recall@10 |
 | ---------------- | ---------- | --------- | -------- | -------------- | ----------- | ------------- | ---------- | -------------- | -------------- |
@@ -430,6 +431,42 @@ models = {
 | RandomForest   | 0.3043     | 0.7593    | 0.63     | 0.86           | 0.28        | 0.1340        | 0.7724     | 0.6212         | 0.4631         |
 | CatBoost     | 0.6095     | 0.7348    | 0.64     | 0.87           | 0.29        | 0.1340        | 0.7724     | 0.6485         | 0.4724         |
 | DecisionTree | 0.0933     | 1.0773    | 0.68     | 0.67           | 0.66        | 0.1340        | 0.7724     | 0.5606         | 0.4356         |
+
+### Woman results
+
+*Table 14. Comparision of Group 1 model with woman dataset. CatBoost shows relatively high precision and recall at 10 on personal characteristic*
+
+| Model | Train RMSE | Test RMSE | Test Accuracy | Test Precision | Test Recall | Precision@10 | Recall@10 | Personal Precision@10 | Personal Recall@10 |
+|-------|------------|-----------|---------------|----------------|-------------|--------------|-----------|---------------------|-------------------|
+| XGBoost | 0.635 | 0.773 | 0.56 | 0.84 | 0.29 | 0.139 | 0.839 | 0.607 | 0.629 |
+| LightGBM | 0.703 | 0.771 | 0.55 | 0.84 | 0.27 | 0.139 | 0.839 | 0.602 | 0.625 |
+| GradientBoosting | 0.719 | 0.769 | 0.55 | 0.86 | 0.26 | 0.139 | 0.839 | 0.605 | 0.622 |
+| RandomForest | 0.722 | 0.773 | 0.53 | 0.87 | 0.22 | 0.139 | 0.839 | 0.609 | 0.624 |
+| CatBoost | 0.719 | 0.767 | 0.55 | 0.86 | 0.26 | 0.139 | 0.839 | 0.614 | 0.630 |
+
+--------------------
+*Table 15. Comparision of Group 2 model with woman dataset. XGBoost shows relatively high precision and recall at 10 on personal characteristic*
+
+| Model | Train RMSE | Test RMSE | Test Accuracy | Test Precision | Test Recall | Precision@10 | Recall@10 | Personal Precision@10 | Personal Recall@10 |
+|-------|------------|-----------|---------------|----------------|-------------|--------------|-----------|---------------------|-------------------|
+| XGBoost | 0.559 | 0.785 | 0.57 | 0.83 | 0.31 | 0.139 | 0.839 | 0.614 | 0.631 |
+| LightGBM | 0.659 | 0.775 | 0.56 | 0.84 | 0.29 | 0.139 | 0.839 | 0.605 | 0.625 |
+| GradientBoosting | 0.641 | 0.779 | 0.56 | 0.85 | 0.30 | 0.139 | 0.839 | 0.612 | 0.630 |
+| RandomForest | 0.721 | 0.773 | 0.53 | 0.87 | 0.22 | 0.139 | 0.839 | 0.614 | 0.627 |
+| CatBoost | 0.672 | 0.771 | 0.56 | 0.85 | 0.28 | 0.139 | 0.839 | 0.612 | 0.632 |
+| DecisionTree | 0.752 | 0.823 | 0.53 | 0.81 | 0.24 | 0.139 | 0.839 | 0.563 | 0.601 |
+
+---------------------------------
+*Table 15. Comparision of Group 3 model with woman dataset. Catboost shows relatively high precision and recall at 10 on personal characteristic, while RandomForest and DecisionTree suffer from overfitting*
+
+| Model | Train RMSE | Test RMSE | Test Accuracy | Test Precision | Test Recall | Precision@10 | Recall@10 | Personal Precision@10 | Personal Recall@10 |
+|-------|------------|-----------|---------------|----------------|-------------|--------------|-----------|---------------------|-------------------|
+| XGBoost | 0.621 | 0.796 | 0.57 | 0.84 | 0.32 | 0.139 | 0.839 | 0.600 | 0.623 |
+| LightGBM | 0.734 | 0.769 | 0.55 | 0.87 | 0.26 | 0.139 | 0.839 | 0.607 | 0.624 |
+| GradientBoosting | 0.778 | 0.770 | 0.53 | 0.88 | 0.21 | 0.139 | 0.839 | 0.600 | 0.621 |
+| RandomForest | 0.314 | 0.773 | 0.57 | 0.86 | 0.30 | 0.139 | 0.839 | 0.607 | 0.622 |
+| CatBoost | 0.659 | 0.774 | 0.56 | 0.84 | 0.29 | 0.139 | 0.839 | 0.612 | 0.629 |
+| DecisionTree | 0.087 | 1.082 | 0.64 | 0.70 | 0.66 | 0.139 | 0.839 | 0.544 | 0.596 |
 
 
 ## Conclusion
