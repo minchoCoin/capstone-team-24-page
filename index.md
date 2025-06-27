@@ -299,8 +299,139 @@ As shown in the Figure 32 and 34, in the test dataset, many of the users  rated 
 
 *Figure 34. Distribution of number of ratings per user in woman test dataset*
 
+## Model comparision
+In this section, we compare the recommendation system based on xgboost, lightgbm, gradientboosting, randomforest, and decision tree model.
+
+We created three groups of machine learning models with slightly different parameters
+
+1. Group 1
+```py
+models = {
+    "XGBoost": xgb.XGBRegressor(
+        n_estimators=500, learning_rate=0.05, max_depth=6,
+        subsample=0.8, colsample_bytree=0.8, gamma=0,
+        reg_alpha=0.1, reg_lambda=1, random_state=0
+    ),
+    "LightGBM": lgb.LGBMRegressor(
+        n_estimators=500, learning_rate=0.05, num_leaves=31,
+        max_depth=6, subsample=0.8, colsample_bytree=0.8,
+        reg_alpha=0.1, reg_lambda=1, random_state=0
+    ),
+    "GradientBoosting": GradientBoostingRegressor(
+        n_estimators=300, learning_rate=0.05, max_depth=5,
+        min_samples_split=5, min_samples_leaf=2, subsample=0.8,
+        random_state=0
+    ),
+    "RandomForest": RandomForestRegressor(
+        n_estimators=300, max_depth=10, min_samples_split=5,
+        min_samples_leaf=2, random_state=0
+    ),
+    "CatBoost": CatBoostRegressor(
+        iterations=500, learning_rate=0.05, depth=6,
+        l2_leaf_reg=1, verbose=0,subsample=0.8,random_state=0
+    ),
+    "DecisionTree": DecisionTreeRegressor(
+        max_depth=10, min_samples_split=5, min_samples_leaf=2,
+        random_state=0
+    )
+}
+```
+2. Group 2: more estimators
+```py
+models = {
+    "XGBoost": xgb.XGBRegressor(
+        n_estimators=1000, learning_rate=0.05, max_depth=6,
+        subsample=0.8, colsample_bytree=0.8, gamma=0,
+        reg_alpha=0.1, reg_lambda=1, random_state=0
+    ),
+    "LightGBM": lgb.LGBMRegressor(
+        n_estimators=1000, learning_rate=0.05, num_leaves=31,
+        max_depth=6, subsample=0.8, colsample_bytree=0.8,
+        reg_alpha=0.1, reg_lambda=1, random_state=0
+    ),
+    "GradientBoosting": GradientBoostingRegressor(
+        n_estimators=1000, learning_rate=0.05, max_depth=5,
+        min_samples_split=5, min_samples_leaf=2, subsample=0.8,
+        random_state=0
+    ),
+    "RandomForest": RandomForestRegressor(
+        n_estimators=1000, max_depth=10, min_samples_split=5,
+        min_samples_leaf=2, random_state=0
+    ),
+    "CatBoost": CatBoostRegressor(
+        iterations=1000, learning_rate=0.05, depth=6,
+        l2_leaf_reg=1, subsample=0.8, verbose=0,random_state=0
+    ),
+    "DecisionTree": DecisionTreeRegressor(
+        max_depth=10, min_samples_split=5, min_samples_leaf=2,
+        random_state=0
+    )
+}
+```
+3. Group 3: No regularization
+```py
+models = {
+    "XGBoost": xgb.XGBRegressor(
+         random_state=0
+    ),
+    "LightGBM": lgb.LGBMRegressor(
+        random_state=0
+    ),
+    "GradientBoosting": GradientBoostingRegressor(
+       
+        random_state=0
+    ),
+    "RandomForest": RandomForestRegressor(
+         random_state=0
+    ),
+    "CatBoost": CatBoostRegressor(
+        random_state=0
+    ),
+    "DecisionTree": DecisionTreeRegressor(
+        random_state=0
+    )
+}
+```
+-----------------
+*Table 1. Comparision of Group 1 model. GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic*
+
+| Model         | Train RMSE | Test RMSE | Test Acc | Test Precision | Test Recall | Precision\@10 | Recall\@10 | Personal Precision\@10 | Personal Recall\@10 |
+| ------------- | ---------- | --------- | -------- | -------------- | ----------- | ------------- | ---------- | -------------- | -------------- |
+| XGBoost       | 0.5816     | 0.7459    | 0.63     | 0.85           | 0.29        | 0.1340        | 0.7724     | 0.6424         | 0.4697         |
+| LightGBM      | 0.6572     | 0.7423    | 0.64     | 0.87           | 0.28        | 0.1340        | 0.7724     | 0.6424         | 0.4694         |
+| GradientBoost | 0.6748     | 0.7373    | 0.64     | 0.87           | 0.28        | 0.1340        | 0.7724     | 0.6485         | 0.4727         |
+| RandomForest  | 0.6799     | 0.7481    | 0.62     | 0.87           | 0.24        | 0.1340        | 0.7724     | 0.6242         | 0.4651         |
+| CatBoost      | 0.6727     | 0.7314    | 0.63     | 0.89           | 0.27        | 0.1340        | 0.7724     | 0.6576         | 0.4800         |
+| DecisionTree  | 0.7086     | 0.8034    | 0.63     | 0.81           | 0.30        | 0.1340        | 0.7724     | 0.6061         | 0.4485         |
+
+-----------------
+*Table 2. Comparision of Group 2 model. XGBoost, GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic*
+
+| Model         | Train RMSE | Test RMSE | Test Acc | Test Precision | Test Recall | Precision\@10 | Recall\@10 | Personal P\@10 | Personal R\@10 |
+| ------------- | ---------- | --------- | -------- | -------------- | ----------- | ------------- | ---------- | -------------- | -------------- |
+| XGBoost       | 0.5003     | 0.7623    | 0.64     | 0.83           | 0.30        | 0.1340        | 0.7724     | 0.6455         | 0.4701         |
+| LightGBM      | 0.6070     | 0.7510    | 0.64     | 0.85           | 0.29        | 0.1340        | 0.7724     | 0.6455         | 0.4700         |
+| GradientBoost | 0.5869     | 0.7502    | 0.64     | 0.83           | 0.31        | 0.1340        | 0.7724     | 0.6424         | 0.4697         |
+| RandomForest  | 0.6796     | 0.7483    | 0.62     | 0.87           | 0.24        | 0.1340        | 0.7724     | 0.6242         | 0.4632         |
+| CatBoost      | 0.6179     | 0.7348    | 0.63     | 0.85           | 0.28        | 0.1340        | 0.7724     | 0.6485         | 0.4734         |
+| DecisionTree  | 0.7086     | 0.8034    | 0.63     | 0.81           | 0.30        | 0.1340        | 0.7724     | 0.6061         | 0.4485         |
+
+-----------------
+
+*Table 3. Comparision of Group 3 model. XGBoost, GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic, while RandomForest and Decision Tree suffer from overfitting*
+
+| Model            | Train RMSE | Test RMSE | Test Acc | Test Precision | Test Recall | Precision\@10 | Recall\@10 | Personal P\@10 | Personal R\@10 |
+| ---------------- | ---------- | --------- | -------- | -------------- | ----------- | ------------- | ---------- | -------------- | -------------- |
+| XGBoost      | 0.5647     | 0.7671    | 0.64     | 0.85           | 0.31        | 0.1340        | 0.7724     | 0.6394         | 0.4654         |
+| LightGBM     | 0.6930     | 0.7389    | 0.64     | 0.90           | 0.27        | 0.1340        | 0.7724     | 0.6424         | 0.4657         |
+| GradientBoost    | 0.7469     | 0.7416    | 0.62     | 0.89           | 0.24        | 0.1340        | 0.7724     | 0.6424         | 0.4715         |
+| RandomForest   | 0.3043     | 0.7593    | 0.63     | 0.86           | 0.28        | 0.1340        | 0.7724     | 0.6212         | 0.4631         |
+| CatBoost     | 0.6095     | 0.7348    | 0.64     | 0.87           | 0.29        | 0.1340        | 0.7724     | 0.6485         | 0.4724         |
+| DecisionTree | 0.0933     | 1.0773    | 0.68     | 0.67           | 0.66        | 0.1340        | 0.7724     | 0.5606         | 0.4356         |
+
+
 ## Conclusion
-We calculate precision, recall, precision at k, recall at k. Also, we draw the precision-recall curve. above results show that the recommendation system can recommend the clothes based on the personal characteristic (personal color, faceshape, bodyshape)
+We calculate precision, recall, precision at k, recall at k. Also, we draw the precision-recall curve. above results show that the recommendation system can recommend the clothes based on the personal characteristic (personal color, faceshape, bodyshape). Additionally, we compare the recommendation systsm based on various machine learning model. results show that XGBoost, GradientBoosting, and Catboost shows relatively high precision at 10 and recall at 10 on personal characteristics.
 
 # BibTex
 ```
