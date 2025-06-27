@@ -128,6 +128,8 @@ After the capstone project is finished, we evaluate the recommendation system mo
 
 We considered a score of 3 or higher to be preferred (or recommended) and a score of less than 3 to be disliked (or not recommended) based on the score the user gave to the clothes and the score predicted by the recommendation system.
 
+We upload the code for model test on the Github: [Link](https://github.com/minchoCoin/capstone-team-24-page/tree/main/appendix)
+
 ## Precision and recall
 
 We measured the precision and recall using classification_report function in sklearn.metrics.
@@ -395,7 +397,7 @@ models = {
 -----------------
 *Table 1. Comparision of Group 1 model. GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic*
 
-| Model         | Train RMSE | Test RMSE | Test Acc | Test Precision | Test Recall | Precision\@10 | Recall\@10 | Personal Precision\@10 | Personal Recall\@10 |
+| Model         | Train RMSE | Test RMSE | Test Acc | Test Precision | Test Recall | Precision@10 | Recall@10 | Personal Precision@10 | Personal Recall@10 |
 | ------------- | ---------- | --------- | -------- | -------------- | ----------- | ------------- | ---------- | -------------- | -------------- |
 | XGBoost       | 0.5816     | 0.7459    | 0.63     | 0.85           | 0.29        | 0.1340        | 0.7724     | 0.6424         | 0.4697         |
 | LightGBM      | 0.6572     | 0.7423    | 0.64     | 0.87           | 0.28        | 0.1340        | 0.7724     | 0.6424         | 0.4694         |
@@ -407,7 +409,7 @@ models = {
 -----------------
 *Table 2. Comparision of Group 2 model. XGBoost, GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic*
 
-| Model         | Train RMSE | Test RMSE | Test Acc | Test Precision | Test Recall | Precision\@10 | Recall\@10 | Personal P\@10 | Personal R\@10 |
+| Model         | Train RMSE | Test RMSE | Test Acc | Test Precision | Test Recall | Precision@10 | Recall@10 | Personal Precision@10 | Personal Recall@10 |
 | ------------- | ---------- | --------- | -------- | -------------- | ----------- | ------------- | ---------- | -------------- | -------------- |
 | XGBoost       | 0.5003     | 0.7623    | 0.64     | 0.83           | 0.30        | 0.1340        | 0.7724     | 0.6455         | 0.4701         |
 | LightGBM      | 0.6070     | 0.7510    | 0.64     | 0.85           | 0.29        | 0.1340        | 0.7724     | 0.6455         | 0.4700         |
@@ -420,7 +422,7 @@ models = {
 
 *Table 3. Comparision of Group 3 model. XGBoost, GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic, while RandomForest and Decision Tree suffer from overfitting*
 
-| Model            | Train RMSE | Test RMSE | Test Acc | Test Precision | Test Recall | Precision\@10 | Recall\@10 | Personal P\@10 | Personal R\@10 |
+| Model            | Train RMSE | Test RMSE | Test Acc | Test Precision | Test Recall | Precision@10 | Recall@10 | Personal Precision@10 | Personal Recall@10 |
 | ---------------- | ---------- | --------- | -------- | -------------- | ----------- | ------------- | ---------- | -------------- | -------------- |
 | XGBoost      | 0.5647     | 0.7671    | 0.64     | 0.85           | 0.31        | 0.1340        | 0.7724     | 0.6394         | 0.4654         |
 | LightGBM     | 0.6930     | 0.7389    | 0.64     | 0.90           | 0.27        | 0.1340        | 0.7724     | 0.6424         | 0.4657         |
