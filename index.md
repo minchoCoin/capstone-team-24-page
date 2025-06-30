@@ -472,7 +472,7 @@ models = {
 | DecisionTree | 0.087 | 1.082 | 0.64 | 0.70 | 0.66 | 0.139 | 0.839 | 0.544 | 0.596 |
 
 ## Lightweight Face shape classification 
-We reduce the face shape classification model size using EfficientNetB2. We change the input image size to 260x260, and add dropout(0.2) for preventing overfiting We initially trained the model with the EfficientNetB2 backbone frozen for 30 epochs, learning rate 1e-3(with cosine decay) and AdamW(weight_decay=5e-5), and then fine-tuned the entire network by unfreezing all layers and using a low learning rate(3e-5 with cosine decay) and AdamW(weight_decay=5e-6) for 50 epochs. Earlystopping parameters are same as previous model.
+We reduce the face shape classification model size using EfficientNetB2. We change the input image size to 260x260, and add dropout(0.3) for preventing overfiting We initially trained the model with the EfficientNetB2 backbone frozen for 25 epochs, learning rate 1e-3(with cosine decay) and AdamW(weight_decay=5e-5), and then fine-tuned the entire network by unfreezing all layers and using a low learning rate(3e-5 with cosine decay) and AdamW(weight_decay=5e-6) for 30 epochs. Earlystopping parameters are same as previous model.
 
 *Table 16. Comparision of original and lightweight model. results show that EfficientNetB2 model achieve similar accuracy while has small size*
 
