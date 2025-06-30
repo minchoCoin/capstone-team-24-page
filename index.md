@@ -479,7 +479,7 @@ We reduce the face shape classification model size using EfficientNetB2. We chan
 | model version                 | test loss | test accuracy | Model size |
 |-------------------------------|-----------|---------------|------------|
 | Ver2(EfficientNetB4 backbone) |   1.2050  |     75.83%    |   17.68M   |
-| Ver3(EfficientNetB2 backbone) |           |               |    7.78M   |
+| Ver3(EfficientNetB2 backbone) |   1.5023  |     75.13%    |    7.78M   |
 
 ## Conclusion
 We calculate precision, recall, precision at k, recall at k. Also, we draw the precision-recall curve. above results show that the recommendation system can recommend the clothes based on the personal characteristic (personal color, faceshape, bodyshape). Additionally, we compare the recommendation systsm based on various machine learning model. results show that XGBoost, GradientBoosting, and Catboost shows relatively high precision at 10 and recall at 10 on personal characteristics.
