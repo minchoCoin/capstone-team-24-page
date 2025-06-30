@@ -32,7 +32,7 @@ This technical report presents a comprehensive fashion recommendation system tha
 ## Personal Color Analysis
 The system extract RGB values of skin area of a face image, and convert it to HSV values and Lab color space. The system uses K-means clustering to classify users' skin tones into four seasonal types (Spring, Summer, Autumn, Winter) by analyzing HSV values and Lab color space. This classification helps recommend colors that enhance the user's natural complexion.
 ## Face Shape Recognition
-We use an EfficientNetB4-based deep learning model. The model was built based on the EfficientNetB4 network pretrained on the ImageNet dataset. A GlobalAveragePooling2D layer was applied to the output of EfficientNetB4, and the resulting output was passed through a Fully-connected layer to classify into five face shapes. We initially trained the model with the EfficientNetB4 backbone frozen, and then fine-tuned the entire network by unfreezing all layers and using a low learning rate. The system identifies five face shapes (heart, long, oval, round, square) with 75.8% accuracy.  These classifications inform recommendations for clothing styles and necklines that complement facial features.
+We use an EfficientNetB4-based deep learning model. The model was built based on the EfficientNetB4 network pretrained on the ImageNet dataset. A GlobalAveragePooling2D layer was applied to the output of EfficientNetB4, and the resulting output was passed through a Fully-connected layer to classify into five face shapes. We initially trained the model with the EfficientNetB4 backbone frozen for 25 epochs, learning rate 1e-3 and kernel regularizer l2(1e-3), and then fine-tuned the entire network by unfreezing all layers and using a low learning rate(1e-4) with 20 epochs. We use EarlyStopping(monitor='val_accuracy', patience=10,restore_best_weights=True) callbacks. The system identifies five face shapes (heart, long, oval, round, square) with 75.8% accuracy. These classifications inform recommendations for clothing styles and necklines that complement facial features.
 ## Body Shape Measurement
 The system employs MediaPipe's Pose Landmark technology and Rembg's removing background technology to extract key body measurements and proportions. It calculates ratios between shoulders, waist, hips, and chest to classify users into different body types, enabling recommendations that enhance body proportions.
 ## Recommendation Engines
@@ -128,7 +128,9 @@ After the capstone project is finished, we evaluate the recommendation system mo
 
 We considered a score of 3 or higher to be preferred (or recommended) and a score of less than 3 to be disliked (or not recommended) based on the score the user gave to the clothes and the score predicted by the recommendation system.
 
-We upload the code for model test on the Github: [Link](https://github.com/minchoCoin/capstone-team-24-page/tree/main/appendix)
+Additionally, We reduce the face shape classification model size using EfficientNetB2
+
+We upload the code for model test and face shape classification model on the Github: [Link](https://github.com/minchoCoin/capstone-team-24-page/tree/main/appendix)
 
 ## Precision and recall
 
@@ -281,7 +283,7 @@ Figure 26 and Figure 27 shows the precision at Top k and recall at Top k. Figure
 
 *Figure 30. Comparison of Precision-recall curve computed based on the items relevant to the personal characteristic element with the woman test dataset.*
 
-## Limitation measuring precision with test dataset
+## Limitation of measuring precision with test dataset
 
 As shown in the Figure 32 and 34, in the test dataset, many of the users  rated only 1-2 clothes. This makes the precision and recall inaccurate. Therefore, the results of the test data above must be interpreted carefully.
 
@@ -394,6 +396,7 @@ models = {
     )
 }
 ```
+
 ### Man results
 -----------------
 *Table 11. Comparision of Group 1 model with man dataset. GradientBoost and CatBoost shows relatively high precision and recall at 10 on personal characteristic*
@@ -468,9 +471,19 @@ models = {
 | CatBoost | 0.659 | 0.774 | 0.56 | 0.84 | 0.29 | 0.139 | 0.839 | 0.612 | 0.629 |
 | DecisionTree | 0.087 | 1.082 | 0.64 | 0.70 | 0.66 | 0.139 | 0.839 | 0.544 | 0.596 |
 
+## Lightweight Face shape classification 
+We reduce the face shape classification model size using EfficientNetB2. We change the input image size to 260x260, and add dropout(0.2) for preventing overfiting We initially trained the model with the EfficientNetB2 backbone frozen for 30 epochs, learning rate 1e-3(with cosine decay) and AdamW(weight_decay=5e-5), and then fine-tuned the entire network by unfreezing all layers and using a low learning rate(3e-5 with cosine decay) and AdamW(weight_decay=5e-6) for 50 epochs. Earlystopping parameters are same as previous model.
+
+*Table 16. Comparision of original and lightweight model. results show that EfficientNetB2 model achieve similar accuracy while has small size*
+
+| model version                 | test loss | test accuracy | Model size |
+|-------------------------------|-----------|---------------|------------|
+| Ver2(EfficientNetB4 backbone) |   1.2050  |     75.83%    |   17.68M   |
+| Ver3(EfficientNetB2 backbone) |           |               |    7.78M   |
 
 ## Conclusion
 We calculate precision, recall, precision at k, recall at k. Also, we draw the precision-recall curve. above results show that the recommendation system can recommend the clothes based on the personal characteristic (personal color, faceshape, bodyshape). Additionally, we compare the recommendation systsm based on various machine learning model. results show that XGBoost, GradientBoosting, and Catboost shows relatively high precision at 10 and recall at 10 on personal characteristics.
+Also, We lightweight the face shape classification model using EfficientNetB2. results show that lightweight model achieve similar accuracy while reducing the model size
 
 # BibTex
 ```
