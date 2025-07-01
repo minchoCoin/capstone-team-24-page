@@ -481,9 +481,27 @@ We reduce the face shape classification model size using EfficientNetB2. We chan
 | Ver2(EfficientNetB4 backbone) |   1.2050  |     75.83%    |   17.68M   |
 | Ver3(EfficientNetB2 backbone) |   1.5023  |     75.13%    |    7.78M   |
 
+## Increasing accuracy by data augmentation and label smoothing
+Inspired by (2), We totally renew the face shape classification code(ver4, ver5, ver6) with data augmentation, label smoothing, learning rate 5e-3 and batch size 32 for 30 epochs. The results show that data augmentation and label smoothing helps increasing accuracy.
+
+*Table 16. Comparision of models. The results show that data augmentation and label smoothing helps increasing accuracy*
+
+| model version                 | test loss | test accuracy | Model size |
+|-------------------------------|-----------|---------------|------------|
+| Ver2(EfficientNetB4 backbone) |   1.2050  |     75.83%    |   17.68M   |
+| Ver3(EfficientNetB2 backbone) |   1.5023  |     75.13%    |    7.78M   |
+| Ver4(EfficientNetB4 backbone with (2)) |   0.7366  |     83.40%    |    17.68M  |
+| Ver5(EfficientNetB2 backbone with (2)) |   0.7444  |     83.60%    |    7.78M   |
+| Ver6(EfficientNetB0 backbone with (2)) |   0.8224  |     81.10%    |    4.06M   |
+
+
+(2) https://www.kaggle.com/code/baranbingl/face-shape-detection-85-acc-on-test-set
+
+
+
 ## Conclusion
 We calculate precision, recall, precision at k, recall at k. Also, we draw the precision-recall curve. above results show that the recommendation system can recommend the clothes based on the personal characteristic (personal color, faceshape, bodyshape). Additionally, we compare the recommendation systsm based on various machine learning model. results show that XGBoost, GradientBoosting, and Catboost shows relatively high precision at 10 and recall at 10 on personal characteristics.
-Also, We lightweight the face shape classification model using EfficientNetB2. results show that lightweight model achieve similar accuracy while reducing the model size
+Also, We lightweight the face shape classification model using EfficientNetB2. results show that lightweight model achieve similar accuracy while reducing the model size. Additionally, we renew the face shape classification model(ver4, ver5, ver6) model. results show that data augmentation helps increasing accuracy.
 
 # BibTex
 ```
