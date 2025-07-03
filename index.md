@@ -123,7 +123,7 @@ Colors According to Skin Color,” M.S. thesis, Graduate School of Cultural and
 Information Policy, Hongik Univ., Seoul, South Korea, 2019. (in Korean) doi: [https://www.doi.org/10.23174/hongik.000000024122.11064.0000288](https://www.doi.org/10.23174/hongik.000000024122.11064.0000288)
 6. Trotter, Cameron Patrick; Peleja, Filipa; Santos, Alberto de; Dotti, Dario (2023). Human Body Shape Classification Dataset. Newcastle University. Dataset. doi: [https://doi.org/10.25405/data.ncl.19307300.v1](https://doi.org/10.25405/data.ncl.19307300.v1)
 
-# Appendix
+# Appendix(Follow-up study)
 After the capstone project is finished, we evaluate the recommendation system more precisely
 
 We considered a score of 3 or higher to be preferred (or recommended) and a score of less than 3 to be disliked (or not recommended) based on the score the user gave to the clothes and the score predicted by the recommendation system.
@@ -495,9 +495,9 @@ Inspired by (2), We totally renew the face shape classification code(ver4, ver5,
 | Ver6(EfficientNetB0 backbone with (2)) |   0.8224  |     81.10%    |    4.06M   |
 
 
-(2) https://www.kaggle.com/code/baranbingl/face-shape-detection-85-acc-on-test-set
+(2) [https://www.kaggle.com/code/baranbingl/face-shape-detection-85-acc-on-test-set](https://www.kaggle.com/code/baranbingl/face-shape-detection-85-acc-on-test-set)
 
-
+You can view the Ver5 code on the [Kaggle](https://www.kaggle.com/code/minchocoin/tensorflow-efficientnetb2-test-accuracy-83percent). Due to the random state, results on Colab(Table 16) and Kaggle are slightly different(test accuracy of Kaggle are 83.30%)
 
 ## Conclusion
 We calculate precision, recall, precision at k, recall at k. Also, we draw the precision-recall curve. above results show that the recommendation system can recommend the clothes based on the personal characteristic (personal color, faceshape, bodyshape). Additionally, we compare the recommendation systsm based on various machine learning model. results show that XGBoost, GradientBoosting, and Catboost shows relatively high precision at 10 and recall at 10 on personal characteristics.
