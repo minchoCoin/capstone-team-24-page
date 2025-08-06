@@ -7,7 +7,7 @@ authors:
     Seonghoon Lee, Taehun Kim
 affiliations:
     Electrical and Computer Engineering, Pusan National University
-paper: https://github.com/pnucse-capstone-2024/Capstone-2024-team-24/blob/main/docs/01.%EB%B3%B4%EA%B3%A0%EC%84%9C/03.%EC%B5%9C%EC%A2%85%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf
+paper: https://github.com/minchoCoin/Capstone-2024-team-24/blob/main/docs/arxivstylepaper/paper.pdf
 video: https://youtu.be/bAQ_bLVpX28?feature=shared
 code: https://github.com/pnucse-capstone-2024/Capstone-2024-team-24
 ---
