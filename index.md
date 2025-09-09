@@ -122,7 +122,7 @@ Available: [https://www.mezzomedia.co.kr/data/insight_m_file/insight_m_file_1605
 Colors According to Skin Color,” M.S. thesis, Graduate School of Cultural and 
 Information Policy, Hongik Univ., Seoul, South Korea, 2019. (in Korean) doi: [https://www.doi.org/10.23174/hongik.000000024122.11064.0000288](https://www.doi.org/10.23174/hongik.000000024122.11064.0000288)
 6. Trotter, Cameron Patrick; Peleja, Filipa; Santos, Alberto de; Dotti, Dario (2023). Human Body Shape Classification Dataset. Newcastle University. Dataset. doi: [https://doi.org/10.25405/data.ncl.19307300.v1](https://doi.org/10.25405/data.ncl.19307300.v1)
-
+<!-->
 # Appendix(Follow-up study)
 After the capstone project is finished, we evaluate the recommendation system more precisely
 
@@ -502,7 +502,7 @@ You can view the Ver5 code on the [Kaggle](https://www.kaggle.com/code/minchocoi
 ## Conclusion
 We calculate precision, recall, precision at k, recall at k. Also, we draw the precision-recall curve. above results show that the recommendation system can recommend the clothes based on the personal characteristic (personal color, faceshape, bodyshape). Additionally, we compare the recommendation systsm based on various machine learning model. results show that XGBoost, GradientBoosting, and Catboost shows relatively high precision at 10 and recall at 10 on personal characteristics.
 Also, We lightweight the face shape classification model using EfficientNetB2. results show that lightweight model achieve similar accuracy while reducing the model size. Additionally, we renew the face shape classification model(ver4, ver5, ver6) model. results show that data augmentation helps increasing accuracy.
-
+<!-->
 # BibTex
 ```
 @software{Fashion_recommendation_personal,
